@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Alcaide — Tatuadora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #17140F;
+    --bg-raised: #1E1A14;
+    --ink: #EDE6DA;
+    --ink-soft: #A69B89;
+    --accent: #B23A2E;
+    --line: #332D24;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.65;
+  }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  h1, h2 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    padding: 28px 0;
+  }
+
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .brand {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-left: 24px;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 70px 24px 90px;
+    opacity: 0;
+    animation: rise 0.7s ease-out forwards;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; opacity: 1; }
+  }
+
+  .hero .kicker {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.4rem, 11vw, 6.2rem);
+  }
+
+  .hero p {
+    margin-top: 22px;
+    max-width: 40ch;
+    color: var(--ink-soft);
+    font-size: 1.12rem;
+  }
+
+  .hero .cta {
+    display: inline-block;
+    margin-top: 34px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 30px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+
+  .hero .cta:hover { background: #8F2E24; }
+
+  /* Sections */
+  section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  section h2 {
+    font-size: 2.1rem;
+    margin-bottom: 22px;
+  }
+
+  .sobre p {
+    max-width: 58ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+
+  .sobre p + p { margin-top: 16px; }
+
+  .sobre strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .sobre .badge {
+    display: inline-block;
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  /* Contacto */
+  .contacto-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .contact-card {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .contact-card:hover { border-color: var(--accent); }
+
+  .contact-card .label {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .contact-card .value {
+    font-size: 1.1rem;
+  }
+
+  .contact-card .go {
+    color: var(--accent);
+    font-size: 1.3rem;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 560px) {
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+    nav a { margin-left: 0; margin-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Ana Alcaide</div>
+    <nav>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="kicker">Tatuadora</div>
+  <h1>Cada piel<br>cuenta algo</h1>
+  <p>Diseños a medida, hechos con calma y con cuidado. Cada tatuaje empieza escuchando tu idea.</p>
+  <a class="cta" href="#contacto">Pide tu cita</a>
+</div>
+
+<section id="sobre" class="sobre">
+  <h2>Sobre mí</h2>
+  <p>Soy <strong>Ana Alcaide</strong>, y el tatuaje es mi forma de contar historias sobre la piel. Me formé a fondo en la técnica y el cuidado del oficio a través de un curso especializado en tatuaje, donde aprendí desde la base del dibujo hasta la seguridad e higiene en cada sesión.</p>
+  <p>Trabajo con calma, sin prisas: cada proyecto empieza con una conversación para entender qué quieres contar y cómo darle forma en tu piel.</p>
+  <span class="badge">Formación especializada en tatuaje</span>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="contacto-grid">
+    <a class="contact-card" href="https://instagram.com/inkognitatattoo" target="_blank" rel="noopener">
+      <div>
+        <div class="label">Instagram</div>
+        <div class="value">@inkognitatattoo</div>
+      </div>
+      <span class="go">↗</span>
+    </a>
+    <a class="contact-card" href="mailto:inkognitattoo0@gmail.com">
+      <div>
+        <div class="label">Email</div>
+        <div class="value">inkognitattoo0@gmail.com</div>
+      </div>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ana Alcaide
+</footer>
+
+</body>
+</html>
