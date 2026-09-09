@@ -76,11 +76,35 @@
 
   /* Hero */
   .hero {
+    position: relative;
     max-width: 760px;
     margin: 0 auto;
     padding: 70px 24px 90px;
     opacity: 0;
     animation: rise 0.7s ease-out forwards;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -15%;
+    right: -15%;
+    bottom: -25%;
+    background-image: url('logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.16;
+    filter: blur(1.5px) grayscale(0.25);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero > * {
+    position: relative;
+    z-index: 1;
   }
 
   @keyframes rise {
@@ -122,24 +146,6 @@
   }
 
   .hero .cta:hover { background: #8F2E24; }
-
-  /* Logo */
-  .machine-shot {
-    width: 100%;
-    padding: 50px 24px;
-    display: flex;
-    justify-content: center;
-    background: var(--bg-raised);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .machine-shot img {
-    max-width: 220px;
-    width: 100%;
-    height: auto;
-    display: block;
-  }
 
   /* Sections */
   section {
@@ -323,13 +329,9 @@
 
 <div class="hero">
   <div class="kicker">Tatuadora</div>
-  <h1>Cada piel<br>cuenta algo</h1>
+  <h1>Cada piel<br>cuenta una historia</h1>
   <p>Diseños a medida, hechos con calma y con cuidado. Cada tatuaje empieza escuchando tu idea.</p>
   <a class="cta" href="#contacto">Pide tu cita</a>
-</div>
-
-<div class="machine-shot">
-  <img src="logo.png" alt="Inkognita Tattoo">
 </div>
 
 <section id="sobre" class="sobre">
