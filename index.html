@@ -205,6 +205,89 @@
     color: var(--ink-soft);
   }
 
+  /* Proceso */
+  .proceso-list {
+    counter-reset: paso;
+    display: grid;
+    gap: 28px;
+  }
+
+  .proceso-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 18px;
+  }
+
+  .proceso-item .num {
+    counter-increment: paso;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .proceso-item .num::before {
+    content: counter(paso, decimal-leading-zero);
+  }
+
+  .proceso-item h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.12rem;
+    margin-bottom: 6px;
+  }
+
+  .proceso-item p {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 52ch;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 500;
+    font-size: 1.02rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-family: 'Big Shoulders Display', sans-serif;
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: '–';
+  }
+
+  .faq-item p {
+    padding: 0 22px 20px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 56ch;
+  }
+
   /* Contacto */
   .contacto-grid {
     display: grid;
@@ -260,6 +343,8 @@
     <div class="brand">Ana Alcaide</div>
     <nav>
       <a href="#sobre">Sobre mí</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -285,6 +370,58 @@
   <p>Soy <strong>Ana Alcaide</strong>, y el tatuaje es mi forma de contar historias sobre la piel. Me formé a fondo en la técnica y el cuidado del oficio a través de un curso especializado en tatuaje, donde aprendí desde la base del dibujo hasta la seguridad e higiene en cada sesión.</p>
   <p>Trabajo con calma, sin prisas: cada proyecto empieza con una conversación para entender qué quieres contar y cómo darle forma en tu piel.</p>
   <span class="badge">Formación especializada en tatuaje</span>
+</section>
+
+<section id="proceso">
+  <h2>Cómo va la cita</h2>
+  <div class="proceso-list">
+    <div class="proceso-item">
+      <div class="num"></div>
+      <div>
+        <h3>Cuéntame tu idea</h3>
+        <p>Escríbeme directamente por Instagram o por correo, indicando una imagen de referencia o, si no lo tienes del todo claro, una explicación de qué te quieres tatuar.</p>
+      </div>
+    </div>
+    <div class="proceso-item">
+      <div class="num"></div>
+      <div>
+        <h3>Diseño y presupuesto</h3>
+        <p>Preparo un boceto adaptado a tu piel y te paso un precio orientativo antes de reservar fecha.</p>
+      </div>
+    </div>
+    <div class="proceso-item">
+      <div class="num"></div>
+      <div>
+        <h3>El día de la cita</h3>
+        <p>Repasamos el diseño juntas, ajustamos si hace falta, y empezamos con calma. Todo el material es de un solo uso.</p>
+      </div>
+    </div>
+    <div class="proceso-item">
+      <div class="num"></div>
+      <div>
+        <h3>Cuidados posteriores</h3>
+        <p>Te explico paso a paso cómo cuidar el tatuaje los primeros días, y quedo disponible por si te surge cualquier duda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>¿Hay una edad mínima para tatuarse?</summary>
+      <p>Sí, es necesario ser mayor de edad. Para menores se requiere autorización de madre, padre o tutor legal, según la normativa vigente.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Duele mucho?</summary>
+      <p>Depende de la zona y de cada persona. Trabajo con calma y hago pausas si las necesitas, para que la sesión sea lo más llevadera posible.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo cuido el tatuaje después?</summary>
+      <p>Te doy instrucciones por escrito el mismo día: básicamente mantenerlo limpio, hidratado y protegido del sol las primeras semanas.</p>
+    </details>
+  </div>
 </section>
 
 <section id="contacto">
