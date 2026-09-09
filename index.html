@@ -123,6 +123,53 @@
 
   .hero .cta:hover { background: #8F2E24; }
 
+  /* Máquina de tatuaje */
+  .machine-shot {
+    position: relative;
+    width: 100%;
+    height: clamp(280px, 50vw, 480px);
+    overflow: hidden;
+  }
+
+  .machine-shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.35) contrast(1.2) brightness(0.6) saturate(1.3);
+  }
+
+  .machine-shot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(23,20,15,0) 35%, rgba(23,20,15,0.96) 100%),
+      linear-gradient(100deg, rgba(178,58,46,0.28), rgba(23,20,15,0.1) 60%);
+  }
+
+  .machine-caption {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 26px;
+    z-index: 2;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.7rem, 4.5vw, 2.7rem);
+    line-height: 0.95;
+    max-width: 680px;
+  }
+
+  .machine-caption span {
+    display: block;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
   /* Sections */
   section {
     max-width: 760px;
@@ -223,6 +270,14 @@
   <h1>Cada piel<br>cuenta algo</h1>
   <p>Diseños a medida, hechos con calma y con cuidado. Cada tatuaje empieza escuchando tu idea.</p>
   <a class="cta" href="#contacto">Pide tu cita</a>
+</div>
+
+<div class="machine-shot">
+  <img src="https://images.unsplash.com/photo-1526893299283-37e82b1e4da5?fm=jpg&q=80&w=1600&auto=format&fit=crop" alt="Máquina de tatuaje">
+  <div class="machine-caption">
+    Precisión, línea a línea
+    <span>Foto: Unsplash / Andrej Lišakov</span>
+  </div>
 </div>
 
 <section id="sobre" class="sobre">
